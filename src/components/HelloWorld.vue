@@ -51,24 +51,24 @@
 </template>
 
 <script>
-  export default {
-    name: 'HelloWorld',
+export default {
+  name: 'HelloWorld',
 
-    data: () => ({
-      whatsNext: [
-        {
-          text: 'Wikipedia',
-          href: 'https://ja.wikipedia.org/wiki/%E3%81%AA%E3%81%9C%E7%A7%81%E3%81%AF%E7%A7%81%E3%81%AA%E3%81%AE%E3%81%8B',
-        },
-        {
-          text: 'Amazon',
-          href: 'https://www.amazon.co.jp/Why-Am-Me-Paige-Britt/dp/1338053140',
-        },
-        {
-          text: 'Rakuten',
-          href: 'https://books.rakuten.co.jp/rk/c649e150ee46377098a3e86ab3264686/?l-id=item-c-relation-24',
-        },
-      ],
-    }),
-  }
+  data: () => ({
+    whatsNext: [
+      {
+        text: 'Wikipedia',
+        href: 'https://ja.wikipedia.org/wiki/%E3%81%AA%E3%81%9C%E7%A7%81%E3%81%AF%E7%A7%81%E3%81%AA%E3%81%AE%E3%81%8B'
+      },
+      {
+        text: 'Amazon',
+        href: 'https://www.amazon.co.jp/Why-Am-Me-Paige-Britt/dp/1338053140'
+      },
+      {
+        text: 'Rakuten',
+        href: 'https://books.rakuten.co.jp/rk/c649e150ee46377098a3e86ab3264686/?l-id=item-c-relation-24'
+      }
+    ]
+  })
+}
 </script>

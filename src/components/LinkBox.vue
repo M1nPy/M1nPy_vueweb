@@ -10,7 +10,7 @@
                 {{linkdata.text}}
             </small>
             </div>
-        </a>    
+        </a>
         </div>
     </div>
 </template>
@@ -40,13 +40,13 @@
 </style>
 <script>
 export default {
-    name: 'LinkBox',
-    props: {
-        linkdata :{
-            type: Object,
-            require:true,
-            'default':() => ({name:"none",link:"none",text:"none"})     
-        }
+  name: 'LinkBox',
+  props: {
+    linkdata: {
+      type: Object,
+      require: true,
+      default: () => ({ name: 'none', link: 'none', text: 'none' })
     }
+  }
 }
 </script>

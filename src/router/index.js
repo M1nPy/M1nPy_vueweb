@@ -5,7 +5,6 @@ import About from '../views/About.vue'
 import Links from '../views/Links.vue'
 import Graphic from '../views/Graphic.vue'
 
-
 Vue.use(VueRouter)
 
 const routes = [

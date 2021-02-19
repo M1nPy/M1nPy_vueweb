@@ -4,19 +4,18 @@
       <v-toolbar-title>M1nPy</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-btn text to="/">Home</v-btn>
+        <v-btn class="hidden-sm-and-down" text to="/">Home</v-btn>
       </v-toolbar-items>
       <v-toolbar-items>
-        <v-btn text to="/About">About</v-btn>
+        <v-btn class="hidden-sm-and-down" text to="/About">About</v-btn>
       </v-toolbar-items>
       <v-toolbar-items>
-        <v-btn text to="/Graphic">Graphic</v-btn>
+        <v-btn class="hidden-sm-and-down" text to="/Graphic">Graphic</v-btn>
       </v-toolbar-items>
       <v-toolbar-items>
-        <v-btn text to="/Links">Links</v-btn>
+        <v-btn class="hidden-sm-and-down" text to="/Links">Links</v-btn>
       </v-toolbar-items>
-
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon class="hidden-sm-and-up" @click="drawer = !drawer"></v-app-bar-nav-icon>
     </v-app-bar>
 
     <v-navigation-drawer app v-model="drawer" right clipped>
@@ -52,32 +51,32 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       drawer: null,
       nav_lists: [
         {
-        name: "Home",
-        icon: "mdi-vuetify" ,
-        link: "/"
+          name: 'Home',
+          icon: 'mdi-vuetify',
+          link: '/'
         },
         {
-        name: "About",
-        icon: "mdi-cogs",
-        link: "/About"
+          name: 'About',
+          icon: 'mdi-cogs',
+          link: '/About'
         },
         {
-        name: "Graphic",
-        icon: "mdi-palette",
-        link: "/Graphic"
+          name: 'Graphic',
+          icon: 'mdi-palette',
+          link: '/Graphic'
         },
         {
-        name: "Links",
-        icon: "mdi-view-dashboard",
-        link: "/Links"
+          name: 'Links',
+          icon: 'mdi-view-dashboard',
+          link: '/Links'
         }
       ]
-    };
+    }
   }
-};
+}
 </script>

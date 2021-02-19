@@ -1,10 +1,10 @@
 <template>
-<v-app>
-    a
-</v-app>
+  <div>
+    aaaaaa
+  </div>
 </template>
 <script>
 export default {
-  name: 'Graphic'
+  name: 'Linkprevue'
 }
 </script>
