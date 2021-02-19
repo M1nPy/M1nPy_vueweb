@@ -38,16 +38,16 @@
 </template>
 <style scoped>
 .flip-list-move {
-  transition: transform 0.8s ease-out;
+  transition: transform 1s;
 }
-.flip-list-enter-active,
+.flip-list-enter,
 .flip-list-leave-active{
-  transition: all 1s ease;
+  transition: all 0.5s ease;
 }
 .flip-list-enter-from,
 .flip-list-leave-to {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateX(30px);
 }
 
 .header {

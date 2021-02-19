@@ -18,7 +18,7 @@
       <v-app-bar-nav-icon class="hidden-sm-and-up" @click="drawer = !drawer"></v-app-bar-nav-icon>
     </v-app-bar>
 
-    <v-navigation-drawer app v-model="drawer" right clipped>
+    <v-navigation-drawer class="hidden-sm-and-up" app v-model="drawer" right clipped>
       <v-container>
         <v-list-item>
           <v-list-item-content>
