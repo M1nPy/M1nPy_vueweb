@@ -1,10 +1,15 @@
 <template>
     <div class="links">
-        <h2>リンク集</h2>
         <Linkslist class="linklist"/>
     </div>
 </template>
 <style scoped>
+.links{
+  margin-top:30px;
+}
+.linklist{
+  padding:20px
+}
 </style>
 <script>
 import Linkslist from '@/components/Linkslist.vue'

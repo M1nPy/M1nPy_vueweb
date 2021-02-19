@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Links from '../views/Links.vue'
+import Graphic from '../views/Graphic.vue'
+
 
 Vue.use(VueRouter)
 
@@ -21,6 +23,11 @@ const routes = [
     path: '/links',
     name: 'Links',
     component: Links
+  },
+  {
+    path: '/Graphic',
+    name: 'Graphic',
+    component: Graphic
   }
 ]
 

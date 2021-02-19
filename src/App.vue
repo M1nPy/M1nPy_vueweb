@@ -4,7 +4,7 @@
       <v-toolbar-title>M1nPy</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-btn text to="/Home">Home</v-btn>
+        <v-btn text to="/">Home</v-btn>
       </v-toolbar-items>
       <v-toolbar-items>
         <v-btn text to="/About">About</v-btn>
@@ -32,7 +32,7 @@
         <v-divider></v-divider>
 
         <v-list dense nav>
-          <v-list-item v-for="nav_list in nav_lists" :key="nav_list.name">
+          <v-list-item v-for="nav_list in nav_lists" :key="nav_list.name" :to="nav_list.link">
             <v-list-item-icon>
               <v-icon>{{ nav_list.icon }}</v-icon>
             </v-list-item-icon>
@@ -56,10 +56,26 @@ export default {
     return {
       drawer: null,
       nav_lists: [
-        { name: "Home", icon: "mdi-vuetify" },
-        { name: "About", icon: "mdi-cogs" },
-        { name: "Graphic", icon: "mdi-palette" },
-        { name: "Links", icon: "mdi-view-dashboard" }
+        {
+        name: "Home",
+        icon: "mdi-vuetify" ,
+        link: "/"
+        },
+        {
+        name: "About",
+        icon: "mdi-cogs",
+        link: "/About"
+        },
+        {
+        name: "Graphic",
+        icon: "mdi-palette",
+        link: "/Graphic"
+        },
+        {
+        name: "Links",
+        icon: "mdi-view-dashboard",
+        link: "/Links"
+        }
       ]
     };
   }

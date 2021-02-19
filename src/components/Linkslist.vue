@@ -1,14 +1,31 @@
 <template>
   <div id="list-wrap">
+    <v-app>
+       <v-container fluid>
       <div class="list">
         <div class="header">
+        <v-row align="center">
+        <v-col cols="7">
           <span>リンク集</span>
-          <div class="menu">a</div>
+        </v-col>
+        <v-col cols="5">
+          <v-select
+            :items="items"
+            item-text="state"
+            item-value="abbr"
+            label="Category"
+            multiple
+            v-model="message"
+          ></v-select>
+          </v-col>
+        </v-row>
         </div>
       </div>
+      </v-container>
       <div class="list" v-for="obj in links" :key="obj.name">
         <LinkBox v-bind:linkdata="obj"></LinkBox>
       </div>
+    </v-app>
   </div>
 </template>
 <style scoped>
@@ -16,7 +33,6 @@
   display: flex;
   justify-content: space-between;
   font-size: 20px;
-  padding: 15px;
   box-shadow: rgba(100, 100, 100, 0.8);
 }
 .list{
@@ -44,12 +60,28 @@ export default {
   },
   data() {
     return{
-    links: [
-    {name: 'いきいき音楽科', link: 'https://www.iki2music.work/',text:'https://www.iki2music.work/'},
-    {name: 'DATT.MUSIC', link: 'https://datt-music.com/',text:'https://datt-music.com/'},
-    {name: '音楽理論.com', link: 'https://ongakuriron.com/',text:'https://ongakuriron.com/'}
-    ]
+    linklist: [
+    {name: 'いきいき音楽科', link: 'https://www.iki2music.work/',text:'https://www.iki2music.work/',category:['music','theory']},
+    {name: 'DATT.MUSIC', link: 'https://datt-music.com/',text:'https://datt-music.com/',category:['music']},
+    {name: '音楽理論.com', link: 'https://ongakuriron.com/',text:'https://ongakuriron.com/',category:['music','theory']}
+    ],
+    items:[
+      {state:'Music',abbr:'music'},
+      {state:'MusicTheory',abbr:'theory'},
+      {state:'IT',abbr:'it'},
+      {state:'Math',abbr:'math'},
+      {state:'Audio',abbr:'audio'},
+    ],
+    message:['music']
   }
+  },
+  computed:{
+    links: function () {
+        var message = this.message
+        return this.linklist.filter(function (linklist) {
+        return message.map(item => linklist.category.includes(item)).includes(true)
+      })
+    }
   }
 }
 </script>
