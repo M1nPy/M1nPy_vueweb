@@ -148,7 +148,7 @@ export default {
         { state: 'Audio', abbr: 'audio' }
       ],
       CategoryValue: ['music'],
-      CurrentPage: 0
+      CurrentPage: 1
     }
   },
   methods: {
@@ -167,7 +167,7 @@ export default {
             ).length >= CategoryValue.length
           )
         })
-        .slice(this.CurrentPage, this.CurrentPage + 5)
+        .slice((this.CurrentPage - 1) * 5, (this.CurrentPage - 1) * 5 + 5)
     }
   }
 }
