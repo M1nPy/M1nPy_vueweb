@@ -1,6 +1,6 @@
 <template>
   <v-app>
-  <div id="list-wrap">
+    <div id="list-wrap">
       <v-container fluid>
         <div class="list">
           <div class="header">
@@ -15,7 +15,7 @@
                   item-value="abbr"
                   label="Category"
                   multiple
-                  v-model="message"
+                  v-model="CategoryValue"
                 ></v-select>
               </v-col>
             </v-row>
@@ -25,23 +25,22 @@
       <transition-group name="flip-list" tag="ul">
         <div class="list" v-for="obj in links" :key="obj.name">
           <v-hover v-slot="{ hover }">
-            <v-card :elevation="hover ? 10 : 2" >
+            <v-card :elevation="hover ? 10 : 2">
               <LinkBox v-bind:linkdata="obj"></LinkBox>
             </v-card>
           </v-hover>
         </div>
       </transition-group>
-  </div>
-      <LinkPageNation class="pagenation" />
-    </v-app>
-
+    </div>
+    <LinkPageNation @Cpage="updateCurrentPage" class="pagenation" />
+  </v-app>
 </template>
 <style scoped>
 .flip-list-move {
   transition: transform 1s;
 }
 .flip-list-enter,
-.flip-list-leave-active{
+.flip-list-leave-active {
   transition: all 0.5s ease;
 }
 .flip-list-enter-from,
@@ -65,12 +64,12 @@ ul {
 }
 
 #list-wrap {
-  width:50%;
+  width: 50%;
   min-width: 800px;
-  height:800px;
+  height: 800px;
   box-shadow: 0 1px 2px 0 rgb(200, 200, 200);
   margin: 0px auto;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
 </style>
 <script>
@@ -133,6 +132,12 @@ export default {
           link: 'https://knowledge.sakura.ad.jp/',
           text: 'https://knowledge.sakura.ad.jp/',
           category: ['it']
+        },
+        {
+          name: 'Wolframalpha',
+          link: 'https://www.wolframalpha.com/',
+          text: 'https://www.wolframalpha.com/',
+          category: ['math']
         }
       ],
       items: [
@@ -142,17 +147,27 @@ export default {
         { state: 'Math', abbr: 'math' },
         { state: 'Audio', abbr: 'audio' }
       ],
-      message: ['music']
+      CategoryValue: ['music'],
+      CurrentPage: 0
+    }
+  },
+  methods: {
+    updateCurrentPage (CurrentPage) {
+      this.CurrentPage = CurrentPage
     }
   },
   computed: {
     links: function () {
-      var message = this.message
-      return this.linklist.filter(function (linklist) {
-        return message
-          .map(item => linklist.category.includes(item))
-          .filter(x => x === true).length >= message.length
-      })
+      var CategoryValue = this.CategoryValue
+      return this.linklist
+        .filter(function (linklist) {
+          return (
+            CategoryValue.map(item => linklist.category.includes(item)).filter(
+              x => x === true
+            ).length >= CategoryValue.length
+          )
+        })
+        .slice(this.CurrentPage, this.CurrentPage + 5)
     }
   }
 }
