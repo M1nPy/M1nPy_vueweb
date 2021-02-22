@@ -22,7 +22,7 @@
           </div>
         </div>
       </v-container>
-      <transition-group name="flip-list" tag="ul">
+      <transition-group name="flip-list" tag="ul" appear>
         <div class="list" v-for="obj in links" :key="obj.name">
           <v-hover v-slot="{ hover }">
             <v-card :elevation="hover ? 10 : 2">
@@ -39,14 +39,22 @@
 .flip-list-move {
   transition: transform 1s;
 }
-.flip-list-enter,
+
 .flip-list-leave-active {
+  position:absolute;
   transition: all 0.5s ease;
 }
-.flip-list-enter-from,
+.flip-list-enter-active{
+  transition: all 0.5s ease;
+  transition-delay:0.5s;
+}
+.flip-list-enter {
+  opacity: 0;
+  transform: translateY(-30px);
+}
 .flip-list-leave-to {
   opacity: 0;
-  transform: translateX(30px);
+  transform: translateY(30px);
 }
 
 .header {
