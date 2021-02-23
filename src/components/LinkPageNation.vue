@@ -1,15 +1,14 @@
 <template>
   <div>
-    <v-app id="inspire">
       <div class="text-center">
         <v-pagination
+          circle
           :value="Page"
           :length="PageLength > 0 ? PageLength : 1"
           :total-visible="5"
           @input="$emit('update:Page', $event)"
         ></v-pagination>
       </div>
-    </v-app>
   </div>
 </template>
 <style></style>

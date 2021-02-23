@@ -1,43 +1,43 @@
 <template>
-  <v-app>
-    <div id="list-wrap">
-      <v-container fluid>
-        <div class="list">
-          <div class="header">
-            <v-row align="center">
-              <v-col cols="7">
-                <span>リンク集</span>
-              </v-col>
-              <v-col cols="5">
-                <v-select
-                  :items="items"
-                  item-text="state"
-                  item-value="abbr"
-                  label="Category"
-                  multiple
-                  v-model="CategoryValue"
-                ></v-select>
-              </v-col>
-            </v-row>
-          </div>
+<div class="wrap">
+  <div id="list-wrap">
+    <v-container fluid>
+      <div class="list">
+        <div class="header">
+          <v-row align="center">
+            <v-col cols="7">
+              <span>リンク集</span>
+            </v-col>
+            <v-col cols="5">
+              <v-select
+                :items="items"
+                item-text="state"
+                item-value="abbr"
+                label="Category"
+                multiple
+                v-model="CategoryValue"
+              ></v-select>
+            </v-col>
+          </v-row>
         </div>
-      </v-container>
-      <transition-group name="flip-list" tag="ul" appear>
-        <div class="list" v-for="obj in SlicedLinks" :key="obj.name">
-          <v-hover v-slot="{ hover }">
-            <v-card :elevation="hover ? 10 : 2">
-              <LinkBox v-bind:linkdata="obj"></LinkBox>
-            </v-card>
-          </v-hover>
-        </div>
-      </transition-group>
-    </div>
-    <LinkPageNation
-      v-bind:Page.sync="CurrentPage"
-      v-bind:PageLength="PageLength"
-      class="pagenation"
-    />
-  </v-app>
+      </div>
+    </v-container>
+    <transition-group name="flip-list" tag="ul" appear>
+      <div class="list" v-for="obj in SlicedLinks" :key="obj.name">
+        <v-hover v-slot="{ hover }">
+          <v-card :elevation="hover ? 10 : 2">
+            <LinkBox v-bind:linkdata="obj"></LinkBox>
+          </v-card>
+        </v-hover>
+      </div>
+    </transition-group>
+  </div>
+  <LinkPageNation
+    v-bind:Page.sync="CurrentPage"
+    v-bind:PageLength="PageLength"
+    class="pagenation"
+  />
+  </div>
 </template>
 <style scoped>
 .flip-list-move {
@@ -52,11 +52,11 @@
 }
 .flip-list-enter {
   opacity: 0;
-  transform: translateY(-30px);
+  transform: translateX(30px);
 }
 .flip-list-leave-to {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateX(30px);
 }
 
 .header {

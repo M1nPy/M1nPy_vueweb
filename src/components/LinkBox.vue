@@ -1,7 +1,7 @@
 <template>
     <div class="wrap">
         <div class="link-border">
-        <a v-bind:href="linkdata.link">
+        <a v-bind:href="linkdata.link" target="_blank" rel="noopener noreferrer">
             <div class="link-wrap">
             <span class="link-title">
                 {{linkdata.name}}
