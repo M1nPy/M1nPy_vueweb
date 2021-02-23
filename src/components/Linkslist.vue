@@ -184,6 +184,7 @@ export default {
       })
     },
     PageLength: function () {
+      this.updateCurrentPage(1)
       return Math.ceil(this.links.length / 5)
     },
     SlicedLinks: function () {
