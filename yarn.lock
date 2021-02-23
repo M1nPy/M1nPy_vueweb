@@ -5238,6 +5238,11 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.npm.taobao.org/lines-and-columns/download/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
+link-prevue@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/link-prevue/-/link-prevue-1.2.0.tgz#a4ca0ecbf7d9595c3fd634d9594215b855a8374a"
+  integrity sha512-SzzwVt+2oNkPPolTgALPRqfXX4bNqR3O+1Rj7OT1k2zqk8GltBGYwVylMLUM+b0i4SmHJ26atR2ROLPdpeQZ8Q==
+
 load-json-file@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/load-json-file/download/load-json-file-2.0.0.tgz#7947e42149af80d696cbf797bcaabcfe1fe29ca8"

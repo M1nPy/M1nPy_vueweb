@@ -43,7 +43,7 @@
       </v-container>
     </v-navigation-drawer>
 
-    <v-main>
+    <v-main class="px-0">
       <router-view />
     </v-main>
   </v-app>

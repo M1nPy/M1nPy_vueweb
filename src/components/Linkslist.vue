@@ -66,7 +66,7 @@
   box-shadow: rgba(100, 100, 100, 0.8);
 }
 .list {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 ul {
   padding: 0px 5%;
@@ -75,8 +75,9 @@ ul {
 
 #list-wrap {
   width: 50%;
-  min-width: 800px;
-  height: 800px;
+  width:100%;
+  max-width: 900px;
+  height: 1500px;
   box-shadow: 0 1px 2px 0 rgb(200, 200, 200);
   margin: 0px auto;
   margin-bottom: 10px;
@@ -185,12 +186,12 @@ export default {
     },
     PageLength: function () {
       this.updateCurrentPage(1)
-      return Math.ceil(this.links.length / 5)
+      return Math.ceil(this.links.length / 10)
     },
     SlicedLinks: function () {
       return this.links.slice(
-        (this.CurrentPage - 1) * 5,
-        (this.CurrentPage - 1) * 5 + 5
+        (this.CurrentPage - 1) * 10,
+        (this.CurrentPage - 1) * 10 + 10
       )
     }
   }
