@@ -3,30 +3,25 @@
     <v-app id="inspire">
       <div class="text-center">
         <v-pagination
-          v-model="page"
+          :value="Page"
           :length="PageLength"
           :total-visible="5"
-          @input="getNumber"
+          @input="$emit('update:Page',$event)"
         ></v-pagination>
       </div>
     </v-app>
   </div>
 </template>
+<style></style>
 <script>
 export default {
   name: 'LinkPageNation',
-  data () {
-    return {
-      page: 1
-    }
-  },
-  methods: {
-    getNumber: function (number) {
-      this.$emit('Cpage', this.page)
-    }
-  },
   props: {
     PageLength: {
+      type: Number,
+      default: 1
+    },
+    Page: {
       type: Number,
       default: 1
     }

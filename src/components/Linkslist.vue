@@ -33,7 +33,7 @@
       </transition-group>
     </div>
     <LinkPageNation
-      @Cpage="updateCurrentPage"
+      v-bind:Page.sync="CurrentPage"
       v-bind:PageLength="PageLength"
       class="pagenation"
     />
@@ -141,6 +141,12 @@ export default {
           name: 'さくらのナレッジ',
           link: 'https://knowledge.sakura.ad.jp/',
           text: 'https://knowledge.sakura.ad.jp/',
+          category: ['it']
+        },
+        {
+          name: 'ICSMedia',
+          link: 'https://ics.media/',
+          text: 'https://ics.media/',
           category: ['it']
         },
         {
