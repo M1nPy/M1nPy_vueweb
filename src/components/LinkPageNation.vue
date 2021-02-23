@@ -4,15 +4,14 @@
       <div class="text-center">
         <v-pagination
           v-model="page"
-          :length="15"
-          :total-visible="7"
+          :length="PageLength"
+          :total-visible="5"
           @input="getNumber"
         ></v-pagination>
       </div>
     </v-app>
   </div>
 </template>
-<style></style>
 <script>
 export default {
   name: 'LinkPageNation',
@@ -23,7 +22,13 @@ export default {
   },
   methods: {
     getNumber: function (number) {
-      this.$emit('Cpage', number)
+      this.$emit('Cpage', this.page)
+    }
+  },
+  props: {
+    PageLength: {
+      type: Number,
+      default: 1
     }
   }
 }

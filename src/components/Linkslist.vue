@@ -23,7 +23,7 @@
         </div>
       </v-container>
       <transition-group name="flip-list" tag="ul" appear>
-        <div class="list" v-for="obj in links" :key="obj.name">
+        <div class="list" v-for="obj in SlicedLinks" :key="obj.name">
           <v-hover v-slot="{ hover }">
             <v-card :elevation="hover ? 10 : 2">
               <LinkBox v-bind:linkdata="obj"></LinkBox>
@@ -32,21 +32,23 @@
         </div>
       </transition-group>
     </div>
-    <LinkPageNation @Cpage="updateCurrentPage" class="pagenation" />
+    <LinkPageNation
+      @Cpage="updateCurrentPage"
+      v-bind:PageLength="PageLength"
+      class="pagenation"
+    />
   </v-app>
 </template>
 <style scoped>
 .flip-list-move {
-  transition: transform 1s;
+  transition: transform 0.5s;
 }
 
 .flip-list-leave-active {
-  position:absolute;
-  transition: all 0.5s ease;
+  position: absolute;
 }
-.flip-list-enter-active{
+.flip-list-enter-active {
   transition: all 0.5s ease;
-  transition-delay:0.5s;
 }
 .flip-list-enter {
   opacity: 0;
@@ -167,15 +169,22 @@ export default {
   computed: {
     links: function () {
       var CategoryValue = this.CategoryValue
-      return this.linklist
-        .filter(function (linklist) {
-          return (
-            CategoryValue.map(item => linklist.category.includes(item)).filter(
-              x => x === true
-            ).length >= CategoryValue.length
-          )
-        })
-        .slice((this.CurrentPage - 1) * 5, (this.CurrentPage - 1) * 5 + 5)
+      return this.linklist.filter(function (linklist) {
+        return (
+          CategoryValue.map(item => linklist.category.includes(item)).filter(
+            x => x === true
+          ).length >= CategoryValue.length
+        )
+      })
+    },
+    PageLength: function () {
+      return Math.ceil(this.links.length / 5)
+    },
+    SlicedLinks: function () {
+      return this.links.slice(
+        (this.CurrentPage - 1) * 5,
+        (this.CurrentPage - 1) * 5 + 5
+      )
     }
   }
 }
