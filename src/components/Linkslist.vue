@@ -6,17 +6,18 @@
         <div class="header">
           <v-row align="center">
             <v-col cols="7">
-              <span>リンク集</span>
+              <span class="text-h6">リンク集</span>
             </v-col>
             <v-col cols="5">
-              <v-select
+              <v-autocomplete
                 :items="items"
                 item-text="state"
                 item-value="abbr"
                 label="Category"
                 multiple
+                chips
                 v-model="CategoryValue"
-              ></v-select>
+              ></v-autocomplete>
             </v-col>
           </v-row>
         </div>
@@ -60,10 +61,7 @@
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  font-size: 20px;
-  box-shadow: rgba(100, 100, 100, 0.8);
+    padding:0 30px;
 }
 .list {
   margin-bottom: 20px;

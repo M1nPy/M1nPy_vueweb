@@ -1,5 +1,6 @@
 <template>
   <div class="wrap">
+    <span v-if="Explain_flag">リンクにカーソルをホバーさせると概要が表示されます。</span>
     <link-prevue v-bind:url="ReceiveUrl"></link-prevue>
   </div>
 </template>
@@ -15,7 +16,8 @@ export default {
   name: 'Linkprevue',
   data () {
     return {
-      ReceiveUrl: ''
+      ReceiveUrl: '',
+      Explain_flag: true
     }
   },
   components: {
@@ -26,6 +28,7 @@ export default {
   },
   methods: {
     changeMethod (x) {
+      this.Explain_flag = false
       this.ReceiveUrl = x
     }
   }

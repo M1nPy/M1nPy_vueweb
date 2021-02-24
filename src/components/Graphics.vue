@@ -1,6 +1,6 @@
 <template>
   <div class="wrap">
-    <link-prevue url="https://vuejs.org/"></link-prevue>
+    <link-prevue url="https://datt-music.com/"></link-prevue>
   </div>
 </template>
 <script>
