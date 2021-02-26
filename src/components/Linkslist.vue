@@ -91,6 +91,9 @@ export default {
     LinkBox,
     LinkPageNation
   },
+  // mounted(){
+  //   axios.get('url').then(response => (this.info = response))
+  // },
   data () {
     return {
       linklist: [
