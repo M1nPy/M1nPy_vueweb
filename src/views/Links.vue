@@ -7,7 +7,7 @@
         </v-col>
         <v-divider vertical></v-divider>
         <v-col class="hidden-md-and-down mx-md-auto" cols="0" lg="4">
-          <Linkprevue class="linkprevue" />
+          <!-- <Linkprevue class="linkprevue" /> -->
         </v-col>
       </v-row>
     </v-app>
@@ -23,13 +23,13 @@
 </style>
 <script>
 import Linkslist from '@/components/Linkslist.vue'
-import Linkprevue from '@/components/Linkprevue.vue'
+// import Linkprevue from '@/components/Linkprevue.vue'
 
 export default {
   name: 'Links',
   components: {
-    Linkslist,
-    Linkprevue
+    Linkslist
+    // Linkprevue
   }
 }
 </script>

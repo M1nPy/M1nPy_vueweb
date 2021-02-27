@@ -6,7 +6,7 @@
           :value="Page"
           :length="PageLength > 0 ? PageLength : 1"
           :total-visible="5"
-          @input="$emit('update:Page', $event)"
+          @input="$emit('update:page', $event)"
         ></v-pagination>
       </div>
   </div>

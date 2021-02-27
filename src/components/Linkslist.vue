@@ -1,43 +1,43 @@
 <template>
-<div class="wrap">
-  <div id="list-wrap">
-    <v-container fluid>
-      <div class="list">
-        <div class="header">
-          <v-row align="center">
-            <v-col cols="7">
-              <span class="text-h6">リンク集</span>
-            </v-col>
-            <v-col cols="5">
-              <v-autocomplete
-                :items="items"
-                item-text="state"
-                item-value="abbr"
-                label="Category"
-                multiple
-                chips
-                v-model="CategoryValue"
-              ></v-autocomplete>
-            </v-col>
-          </v-row>
+  <div class="wrap">
+    <div id="list-wrap">
+      <v-container fluid>
+        <div class="list">
+          <div class="header">
+            <v-row align="center">
+              <v-col cols="7">
+                <span class="text-h6">リンク集</span>
+              </v-col>
+              <v-col cols="5">
+                <v-autocomplete
+                  :items="items"
+                  item-text="state"
+                  item-value="abbr"
+                  label="Category"
+                  multiple
+                  chips
+                  v-model="CategoryValue"
+                ></v-autocomplete>
+              </v-col>
+            </v-row>
+          </div>
         </div>
-      </div>
-    </v-container>
-    <transition-group name="flip-list" tag="ul" appear>
-      <div class="list" v-for="obj in SlicedLinks" :key="obj.name">
-        <v-hover v-slot="{ hover }">
-          <v-card :elevation="hover ? 10 : 2">
-            <LinkBox v-bind:linkdata="obj"></LinkBox>
-          </v-card>
-        </v-hover>
-      </div>
-    </transition-group>
-  </div>
-  <LinkPageNation
-    v-bind:Page.sync="CurrentPage"
-    v-bind:PageLength="PageLength"
-    class="pagenation"
-  />
+      </v-container>
+      <transition-group name="flip-list" tag="ul" appear>
+        <div class="list" v-for="obj in SlicedLinks" :key="obj.name">
+          <v-hover v-slot="{ hover }">
+            <v-card :elevation="hover ? 10 : 2">
+              <LinkBox v-bind:linkdata="obj"></LinkBox>
+            </v-card>
+          </v-hover>
+        </div>
+      </transition-group>
+    </div>
+    <LinkPageNation
+      v-bind:Page.sync="CurrentPage"
+      v-bind:PageLength="PageLength"
+      class="pagenation"
+    />
   </div>
 </template>
 <style scoped>
@@ -61,7 +61,7 @@
 }
 
 .header {
-    padding:0 30px;
+  padding: 0 30px;
 }
 .list {
   margin-bottom: 20px;
@@ -73,7 +73,7 @@ ul {
 
 #list-wrap {
   width: 50%;
-  width:100%;
+  width: 100%;
   max-width: 900px;
   height: 1500px;
   box-shadow: 0 1px 2px 0 rgb(200, 200, 200);
@@ -84,16 +84,16 @@ ul {
 <script>
 import LinkBox from './LinkBox.vue'
 import LinkPageNation from '@/components/LinkPageNation.vue'
-
+// import axios from 'axios'
 export default {
   name: 'Linkslist',
   components: {
     LinkBox,
     LinkPageNation
   },
-  // mounted(){
-  //   axios.get('url').then(response => (this.info = response))
-  // },
+  mounted () {
+    // axios.get('url').then(response => (this.linklist = response))
+  },
   data () {
     return {
       linklist: [
@@ -187,12 +187,12 @@ export default {
     },
     PageLength: function () {
       this.updateCurrentPage(1)
-      return Math.ceil(this.links.length / 10)
+      return Math.ceil(this.links.length / 5)
     },
     SlicedLinks: function () {
       return this.links.slice(
-        (this.CurrentPage - 1) * 10,
-        (this.CurrentPage - 1) * 10 + 10
+        (this.CurrentPage - 1) * 5,
+        (this.CurrentPage - 1) * 5 + 5
       )
     }
   }
