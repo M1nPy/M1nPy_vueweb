@@ -1,14 +1,14 @@
 <template>
   <v-app>
-    <Graphics />
+    <!-- <Graphics /> -->
   </v-app>
 </template>
 <script>
-import Graphics from '@/components/Graphics.vue'
+// import Graphics from '@/components/Graphics.vue'
 export default {
-  name: 'Graphic',
-  components: {
-    Graphics
-  }
+  name: 'Graphic'
+  // components: {
+  //   Graphics
+  // }
 }
 </script>
