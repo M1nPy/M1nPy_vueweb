@@ -75,7 +75,7 @@ ul {
   width: 50%;
   width: 100%;
   max-width: 900px;
-  height: 1500px;
+  height: 800px;
   box-shadow: 0 1px 2px 0 rgb(200, 200, 200);
   margin: 0px auto;
   margin-bottom: 10px;
