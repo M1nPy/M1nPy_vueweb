@@ -16,6 +16,10 @@
         </h1>
 
         <p class="subheading font-weight-regular">
+          <span class="refurbishment">
+          ※Webページ改修中<br>
+          I'm rewriting this site to one wrote with Nuxt.js.
+          </span><br><br>
           For help and collaboration with M1nPy,
           <br>please ask me via
           <a
@@ -49,7 +53,12 @@
     </v-row>
   </v-container>
 </template>
-
+<style>
+.refurbishment{
+  color:green;
+  font-size:30px;
+}
+</style>
 <script>
 export default {
   name: 'HelloWorld',
