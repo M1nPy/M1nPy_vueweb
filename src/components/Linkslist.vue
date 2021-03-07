@@ -9,7 +9,7 @@
                 <span class="text-h6">リンク集</span>
               </v-col>
               <v-col cols="5">
-                <v-autocomplete
+                <v-select
                   :items="items"
                   item-text="state"
                   item-value="abbr"
@@ -17,7 +17,7 @@
                   multiple
                   chips
                   v-model="CategoryValue"
-                ></v-autocomplete>
+                ></v-select>
               </v-col>
             </v-row>
           </div>
